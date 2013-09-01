@@ -1,1 +1,1 @@
-flask blog project(xyzblog) by Robert Loterh 
+flask blog (xyzblog) by Robert Loterh 
