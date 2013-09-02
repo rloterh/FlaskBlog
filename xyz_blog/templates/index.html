@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block heading %}
+Welcome to the X Y Z Blog
+{% endblock %}
+
+{% block statement %}
+Welcome to X Y Z blog! Enjoy our interesting articles published by on this blog.
+{% endblock %}
+
+{% block herolink %}
+    <p><a class="btn btn-primary" href="{{ url_for('about') }}">
+    Learn more
+    </a></p>
+{% endblock %}
+<!--PUBLISHED CONTENT-->
+{% block content %}
+
+<div class="well span9">
+          <div class="row-fluid">
+            <div class="span9 collapse-group">
+              <h4>{{ bpost.topic}}</h4>
+              <hr>
+              <div>{{ bpost.pub_date.strftime("%B %d %I:%M")}}</div>
+             <div class="collapse" id="viewdetails"><small>{{ bpost.article }}</small> </div>
+              <p><a class="btn" data-toggle="collapse" data-target="#viewdetails">View details &raquo;</a></p>
+              <div>by {{ bpost.firstname }} {{ bpost.lastname }}</div>
+            </div><!--/span-->
+          </div><!--/row-->
+
+        </div><!--/span-->
+
+
+{% endblock %}
+
+
+<!--SIDE BAR-->
+{% block content2 %}
+              <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Recent Posts Tags</li>
+              {% for t in post_tag %}
+              <li><a href="{{ url_for('tag_entry', pub_id = t.pub_id) }}">
+                  {{ t.topic }}, published {{ t.pub_date.strftime("%B %d %I:%M")}}</a></li>
+                   {% endfor %}
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+{% endblock %}
+

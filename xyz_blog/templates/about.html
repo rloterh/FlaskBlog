@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block heading %}
+About X Y Z Blog
+{% endblock %}
+
+{% block statement %}
+This Blog is about X Y Z. To share an article on this blog you need to be a registered member. Sign-up to become a member of X Y Z.
+{% endblock %}
+
+{% block herolink %}
+    <p><a class="btn btn-primary btn-large" href="{{ url_for('home') }}">
+    See Posts
+    </a></p>
+{% endblock %}
