@@ -1,2 +1,2 @@
-flask blog (xyzblog) by Robert Loterh 
+flask blog by Robert Loterh 
 robert.loterh@yahoo.com
